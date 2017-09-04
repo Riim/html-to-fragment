@@ -3,6 +3,7 @@
 		"allowSyntheticDefaultImports": true,
 		"declaration": true,
 		"experimentalDecorators": true,
+		"lib": ["dom", "es2017"],
 		"module": "commonjs",
 		"noImplicitAny": true,
 		"noImplicitReturns": true,
@@ -10,10 +11,9 @@
 		"outDir": "dist",
 		"preserveConstEnums": true,
 		"strictNullChecks": true,
-		"suppressImplicitAnyIndexErrors": true,
 		"target": "es5"
 	},
 	"files": [
-		"src/htmlToFragment.ts"
+		"src/index.ts"
 	]
 }

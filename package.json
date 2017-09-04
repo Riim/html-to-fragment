@@ -1,11 +1,11 @@
 {
   "name": "html-to-fragment",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/htmlToFragment.js",
-  "typings": "dist/htmlToFragment.d.ts",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "build": "./node_modules/.bin/tsc",
+    "build": "rm -rf dist && node_modules/.bin/tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,8 +18,7 @@
     "url": "https://github.com/Riim/html-to-fragment/issues"
   },
   "homepage": "https://github.com/Riim/html-to-fragment#readme",
-  "devDependencies": {},
-  "dependencies": {
-    "typescript": "^2.1.4"
+  "devDependencies": {
+    "typescript": "^2.5.2"
   }
 }

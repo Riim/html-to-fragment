@@ -1,9 +1,11 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var range = document.createRange();
 var htmlToFragment;
+exports.htmlToFragment = htmlToFragment;
 if (range.createContextualFragment) {
     var selected_1 = false;
-    htmlToFragment = function (html) {
+    exports.htmlToFragment = htmlToFragment = function (html) {
         if (!selected_1) {
             range.selectNode(document.body);
             selected_1 = true;
@@ -12,7 +14,7 @@ if (range.createContextualFragment) {
     };
 }
 else {
-    htmlToFragment = function (html) {
+    exports.htmlToFragment = htmlToFragment = function (html) {
         var el = document.createElement('div');
         var df = document.createDocumentFragment();
         el.innerHTML = html;
@@ -22,5 +24,3 @@ else {
         return df;
     };
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = htmlToFragment;

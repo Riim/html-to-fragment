@@ -4,7 +4,7 @@ let htmlToFragment: (html: string) => DocumentFragment;
 if (range.createContextualFragment) {
 	let selected = false;
 
-	htmlToFragment = function(html) {
+	htmlToFragment = (html) => {
 		if (!selected) {
 			range.selectNode(document.body);
 			selected = true;
@@ -13,13 +13,13 @@ if (range.createContextualFragment) {
 		return range.createContextualFragment(html);
 	};
 } else {
-	htmlToFragment = function(html) {
+	htmlToFragment = (html) => {
 		let el = document.createElement('div');
 		let df = document.createDocumentFragment();
 
 		el.innerHTML = html;
 
-		for (let child: Node | null; (child = el.firstChild);) {
+		for (let child: Node | null; (child = el.firstChild); ) {
 			df.appendChild(child);
 		}
 
@@ -27,4 +27,4 @@ if (range.createContextualFragment) {
 	};
 }
 
-export default htmlToFragment;
+export { htmlToFragment };
