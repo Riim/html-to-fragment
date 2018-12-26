@@ -1,10 +1,11 @@
-let range = document.createRange();
+const range = document.createRange && document.createRange();
+
 let htmlToFragment: (html: string) => DocumentFragment;
 
-if (range.createContextualFragment) {
+if (range && range.createContextualFragment) {
 	let selected = false;
 
-	htmlToFragment = (html) => {
+	htmlToFragment = html => {
 		if (!selected) {
 			range.selectNode(document.body);
 			selected = true;
@@ -13,7 +14,7 @@ if (range.createContextualFragment) {
 		return range.createContextualFragment(html);
 	};
 } else {
-	htmlToFragment = (html) => {
+	htmlToFragment = html => {
 		let el = document.createElement('div');
 		let df = document.createDocumentFragment();
 

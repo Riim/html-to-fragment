@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var range = document.createRange();
+var range = document.createRange && document.createRange();
 var htmlToFragment;
 exports.htmlToFragment = htmlToFragment;
-if (range.createContextualFragment) {
+if (range && range.createContextualFragment) {
     var selected_1 = false;
     exports.htmlToFragment = htmlToFragment = function (html) {
         if (!selected_1) {
